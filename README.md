@@ -1,7 +1,5 @@
- md
-  CT-583: Tools and Techniques for Data Science
-
- End-of-Term Technical Challenge — Task 1
+CT-583: Tools and Techniques for Data Science
+Assignment No-2
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Latest-orange)
@@ -15,26 +13,24 @@ The notebook includes the complete workflow starting from data loading and prepr
 
  Open in Google Colab
 
-You can run the notebook directly in Google Colab using the badge below:
-
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]
 (https://colab.research.google.com/github/rahimpg4300201-ship-it/CT583-Data-Science-Assignment/blob/main/Assignment_2.ipynb)
-
- 
 
  Repository Structure
 
 text
-CT583-Data-Science-Assignment/
+CT583-Data-Science-Assignment
 
-├── Assignment_2.ipynb       Main notebook containing the full implementation
-├── task1_report.md          Written report and findings
-└── README.md                Project documentation
+├── Assignment_2.ipynb        
+├── Assignment_report.ipynb    
+├── README.md        
+└── complete_code.ipynb              
+
  
 
  Dataset
 
-The project uses the UCI Adult Census Income Dataset available through OpenML.
+ UCI Adult Census Income Dataset available through OpenML.
 
 * Approximately 48,000 records
 * 14 input features
@@ -97,7 +93,7 @@ jupyter notebook
 | Detail     | Information                                  |
 |  - |             -- |
 | Name       | Insha Rahim Shahwani                         |
-| Student ID | GD-001/2025                                  |
+| Roll No    | GD-001/2025                                  |
 | Course     | CT-583 Tools and Techniques for Data Science |
 
  
