@@ -1,322 +1,108 @@
-# \# CT-583: Tools and Techniques for Data Science
+````md
+# CT-583: Tools and Techniques for Data Science
 
-# \## End-of-Term Technical Challenge — Task 1
+## End-of-Term Technical Challenge — Task 1
 
-# 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Latest-orange)
+![XGBoost](https://img.shields.io/badge/XGBoost-Latest-green)
 
-# !\[Python](https://img.shields.io/badge/Python-3.10-blue)
+## Project Overview
 
-# !\[Scikit-learn](https://img.shields.io/badge/Scikit--learn-Latest-orange)
+This project was completed as part of the CT-583 end-of-term technical challenge. The objective of the assignment is to build a machine learning model that predicts whether a person earns more than $50K per year using the UCI Adult Census Income dataset.
 
-# !\[XGBoost](https://img.shields.io/badge/XGBoost-Latest-green)
+The notebook includes the complete workflow starting from data loading and preprocessing to model training, evaluation, fairness analysis, and feature importance interpretation.
 
-# !\[License](https://img.shields.io/badge/License-Academic-lightgrey)
+## Open in Google Colab
 
-# 
+You can run the notebook directly in Google Colab using the badge below:
 
-# \---
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]
+(https://colab.research.google.com/github/rahimpg4300201-ship-it/CT583-Data-Science-Assignment/blob/main/Assignment_2.ipynb)
 
-# 
+---
 
-# \## Overview
+## Repository Structure
 
-# 
+```text
+CT583-Data-Science-Assignment/
 
-# This repository contains the complete implementation for \*\*Task 1: Classification with Comprehensive Analysis\*\* of the CT-583 Data Science end-of-term technical challenge.
+├── Assignment_2.ipynb     # Main notebook containing the full implementation
+├── task1_report.md        # Written report and findings
+└── README.md              # Project documentation
+````
 
-# 
+## Dataset
 
-# The goal is to build an end-to-end machine learning pipeline that predicts whether an individual earns \*\*more than $50,000 per year\*\* using the UCI Adult Census Income Dataset, with thorough evaluation, failure case analysis, and fairness/bias assessment.
+The project uses the UCI Adult Census Income Dataset available through OpenML.
 
-# 
+* Approximately 48,000 records
+* 14 input features
+* Binary classification target:
 
-# \---
+  * > 50K income
+  * <=50K income
 
-# 
+The dataset is loaded directly inside the notebook using Scikit-learn.
 
-# \## Open in Google Colab
+## Main Tasks Covered
 
-# 
+* Data cleaning and preprocessing
+* Exploratory Data Analysis (EDA)
+* Feature engineering
+* Logistic Regression model
+* Random Forest model
+* XGBoost model
+* Hyperparameter tuning
+* Model evaluation using multiple metrics
+* Fairness and bias analysis
+* Failure case analysis
+* Feature importance visualization
 
-# Click the button below to run the notebook directly in your browser — no installation required:
+## Feature Engineering
 
-# 
+Additional features were created from the original dataset, including:
 
-# \[!\[Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rahimpg4300201-ship-it/CT583-Data-Science-Assignment/blob/main/task1\_classification.ipynb)
+* Age groups
+* Net capital gain/loss
+* Working hour categories
+* Education-age interaction feature
 
-# 
+## Fairness Analysis
 
-# \---
+The model performance was compared across different demographic groups including gender and race to identify possible bias in predictions.
 
-# 
+## How to Run
 
-# \## Repository Structure
+### Option 1 — Google Colab
 
-# 
+1. Open the notebook using the Colab badge
+2. Click Runtime → Run All
+3. Wait for all cells to execute
 
-# ```
+### Option 2 — Local Jupyter Notebook
 
-# CT583-Data-Science-Assignment/
+```bash
+git clone https://github.com/rahimpg4300201-ship-it/CT583-Data-Science-Assignment.git
 
-# │
+cd CT583-Data-Science-Assignment
 
-# ├── task1\_classification.ipynb   # Main Jupyter notebook (complete implementation)
+pip install numpy pandas matplotlib seaborn scikit-learn xgboost jupyter
 
-# ├── task1\_report.md              # Written report with analysis and findings
+jupyter notebook
+```
 
-# └── README.md                    # This file
+## Author
 
-# ```
+| Detail     | Information                                  |
+| ---------- | -------------------------------------------- |
+| Name       | Insha Rahim Shahwani                         |
+| Student ID | GD-001/2025                                  |
+| Course     | CT-583 Tools and Techniques for Data Science |
 
-# 
+---
 
-# \---
+This project was submitted as part of the CT-583 technical challenge assignment.
 
-# 
-
-# \## Dataset
-
-# 
-
-# \*\*UCI Adult Census Income Dataset\*\* (also known as the Census Income dataset)
-
-# 
-
-# | Attribute | Detail |
-
-# |-----------|--------|
-
-# | Source | UCI Machine Learning Repository via OpenML |
-
-# | Records | \~48,842 total |
-
-# | Features | 14 (age, education, occupation, race, sex, etc.) |
-
-# | Target | Binary: >50K vs <=50K income |
-
-# | Class Split | \~76% <=50K / \~24% >50K |
-
-# 
-
-# The dataset is loaded automatically inside the notebook — no manual download required:
-
-# 
-
-# ```python
-
-# from sklearn.datasets import fetch\_openml
-
-# adult = fetch\_openml('adult', version=2, as\_frame=True)
-
-# ```
-
-# 
-
-# \---
-
-# 
-
-# \## What the Notebook Covers
-
-# 
-
-# | Section | Description |
-
-# |---------|-------------|
-
-# | 1. Imports | All required libraries and configuration |
-
-# | 2. Data Loading | Fetch dataset directly from OpenML |
-
-# | 3. EDA | Target distribution, age and categorical visualisations |
-
-# | 4. Preprocessing | Missing value imputation, encoding, scaling, feature engineering |
-
-# | 5. Model Training | Logistic Regression, Random Forest, XGBoost with RandomizedSearchCV |
-
-# | 6. Evaluation | Accuracy, Precision, Recall, F1, AUC-ROC, confusion matrix, ROC curves |
-
-# | 7. Failure Cases | Top 5 misclassified instances with detailed analysis |
-
-# | 8. Fairness Assessment | Bias evaluation across gender and race |
-
-# | 9. Bias Mitigation | Sample reweighing strategy with before/after comparison |
-
-# | 10. Feature Importance | Top 20 XGBoost feature importances |
-
-# | 11. Summary | Conclusions and limitations |
-
-# 
-
-# \---
-
-# 
-
-# \## Models Used
-
-# 
-
-# | Model | Tuning Method | Scoring Metric |
-
-# |-------|--------------|----------------|
-
-# | Logistic Regression | RandomizedSearchCV (5-fold CV) | AUC-ROC |
-
-# | Random Forest | RandomizedSearchCV (5-fold CV) | AUC-ROC |
-
-# | XGBoost | RandomizedSearchCV (5-fold CV) | AUC-ROC |
-
-# 
-
-# \---
-
-# 
-
-# \## Feature Engineering
-
-# 
-
-# Four new features were created from existing data:
-
-# 
-
-# | Feature | Description |
-
-# |---------|-------------|
-
-# | `age\_group` | Age binned into life stages (Youth, YoungAdult, MiddleAge, Senior, Elderly) |
-
-# | `capital\_net` | capital-gain minus capital-loss |
-
-# | `hours\_category` | Hours-per-week binned (PartTime, FullTime, Overtime, Extreme) |
-
-# | `edu\_age\_interaction` | education-num multiplied by age |
-
-# 
-
-# \---
-
-# 
-
-# \## Fairness Assessment
-
-# 
-
-# The model is evaluated separately for:
-
-# \- \*\*Gender\*\*: Male vs Female
-
-# \- \*\*Race\*\*: White vs Non-white
-
-# 
-
-# A disparity greater than 5% in any metric flags potential bias. A \*\*sample reweighing\*\* mitigation technique is applied to reduce identified disparities.
-
-# 
-
-# \---
-
-# 
-
-# \## Requirements
-
-# 
-
-# All dependencies are installed automatically in the notebook. For local runs:
-
-# 
-
-# ```bash
-
-# pip install numpy pandas matplotlib seaborn scikit-learn xgboost jupyter
-
-# ```
-
-# 
-
-# \---
-
-# 
-
-# \## How to Run
-
-# 
-
-# \### Option 1 — Google Colab (Recommended)
-
-# 1\. Click the \*\*Open in Colab\*\* badge above
-
-# 2\. Click \*\*Runtime → Run All\*\*
-
-# 3\. Wait approximately 5-10 minutes for all cells to complete
-
-# 
-
-# \### Option 2 — Local (Jupyter)
-
-# ```bash
-
-# git clone https://github.com/rahimpg4300201-ship-it/CT583-Data-Science-Assignment.git
-
-# cd CT583-Data-Science-Assignment
-
-# pip install numpy pandas matplotlib seaborn scikit-learn xgboost jupyter
-
-# jupyter notebook task1\_classification.ipynb
-
-# ```
-
-# 
-
-# \---
-
-# 
-
-# \## Report
-
-# 
-
-# The full written report is available in \[`task1\_report.md`](./task1\_report.md) and covers:
-
-# 
-
-# \- Model architecture and hyperparameter selection rationale
-
-# \- Complete evaluation metrics with visualisations
-
-# \- Failure case analysis with 5 real misclassified examples
-
-# \- Bias assessment across gender and race
-
-# \- Mitigation strategy and results
-
-# 
-
-# \---
-
-# 
-
-# \## Author
-
-# 
-
-# | | |
-
-# |---|---|
-
-# | \*\*Name\*\* | Insha Rahim Shahwani |
-
-# | \*\*Student ID\*\* | GD-001/2025 |
-
-# | \*\*Course\*\* | CT-583 Tools and Techniques for Data Science |
-
-# | \*\*Submission Date\*\* | 2025 |
-
-# 
-
-# \---
-
-# 
-
-# \*This project was completed as part of the CT-583 end-of-term technical challenge.\*
-
+```
+```
