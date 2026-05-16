@@ -1,38 +1,38 @@
-````md
-# CT-583: Tools and Techniques for Data Science
+ md
+  CT-583: Tools and Techniques for Data Science
 
-## End-of-Term Technical Challenge — Task 1
+ End-of-Term Technical Challenge — Task 1
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Latest-orange)
 ![XGBoost](https://img.shields.io/badge/XGBoost-Latest-green)
 
-## Project Overview
+ Project Overview
 
 This project was completed as part of the CT-583 end-of-term technical challenge. The objective of the assignment is to build a machine learning model that predicts whether a person earns more than $50K per year using the UCI Adult Census Income dataset.
 
 The notebook includes the complete workflow starting from data loading and preprocessing to model training, evaluation, fairness analysis, and feature importance interpretation.
 
-## Open in Google Colab
+ Open in Google Colab
 
 You can run the notebook directly in Google Colab using the badge below:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]
 (https://colab.research.google.com/github/rahimpg4300201-ship-it/CT583-Data-Science-Assignment/blob/main/Assignment_2.ipynb)
 
----
+ 
 
-## Repository Structure
+ Repository Structure
 
-```text
+text
 CT583-Data-Science-Assignment/
 
-├── Assignment_2.ipynb     # Main notebook containing the full implementation
-├── task1_report.md        # Written report and findings
-└── README.md              # Project documentation
-````
+├── Assignment_2.ipynb       Main notebook containing the full implementation
+├── task1_report.md          Written report and findings
+└── README.md                Project documentation
+ 
 
-## Dataset
+ Dataset
 
 The project uses the UCI Adult Census Income Dataset available through OpenML.
 
@@ -45,7 +45,7 @@ The project uses the UCI Adult Census Income Dataset available through OpenML.
 
 The dataset is loaded directly inside the notebook using Scikit-learn.
 
-## Main Tasks Covered
+ Main Tasks Covered
 
 * Data cleaning and preprocessing
 * Exploratory Data Analysis (EDA)
@@ -59,7 +59,7 @@ The dataset is loaded directly inside the notebook using Scikit-learn.
 * Failure case analysis
 * Feature importance visualization
 
-## Feature Engineering
+ Feature Engineering
 
 Additional features were created from the original dataset, including:
 
@@ -68,21 +68,21 @@ Additional features were created from the original dataset, including:
 * Working hour categories
 * Education-age interaction feature
 
-## Fairness Analysis
+ Fairness Analysis
 
 The model performance was compared across different demographic groups including gender and race to identify possible bias in predictions.
 
-## How to Run
+ How to Run
 
-### Option 1 — Google Colab
+ Option 1 — Google Colab
 
 1. Open the notebook using the Colab badge
 2. Click Runtime → Run All
 3. Wait for all cells to execute
 
-### Option 2 — Local Jupyter Notebook
+ Option 2 — Local Jupyter Notebook
 
-```bash
+bash
 git clone https://github.com/rahimpg4300201-ship-it/CT583-Data-Science-Assignment.git
 
 cd CT583-Data-Science-Assignment
@@ -90,19 +90,18 @@ cd CT583-Data-Science-Assignment
 pip install numpy pandas matplotlib seaborn scikit-learn xgboost jupyter
 
 jupyter notebook
-```
 
-## Author
+
+ Author
 
 | Detail     | Information                                  |
-| ---------- | -------------------------------------------- |
+|  - |             -- |
 | Name       | Insha Rahim Shahwani                         |
 | Student ID | GD-001/2025                                  |
 | Course     | CT-583 Tools and Techniques for Data Science |
 
----
+ 
 
-This project was submitted as part of the CT-583 technical challenge assignment.
 
-```
-```
+
+
